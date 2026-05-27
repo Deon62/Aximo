@@ -95,6 +95,7 @@
               <a href="approach.html">Approach</a>
               <a href="insights.html">Insights</a>
               <a href="about.html">About</a>
+              <a href="faq.html">FAQ</a>
               <a href="contact.html">Contact</a>
             </nav>
           </div>

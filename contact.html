@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact Aximo.</title>
+  <meta name="description" content="Tell us briefly what you are working on. We will respond within two business days." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div data-header></div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1 class="display" style="max-width:14ch; margin-top: 18px;">
+          Begin a<br/>
+          conversation.
+        </h1>
+        <p class="lede" style="margin-top: 32px; max-width:60ch;">
+          Tell us briefly what you are working on. We respond within two business days. If Aximo is the right fit, we schedule a 60 minute paid Diagnostic.
+        </p>
+      </div>
+    </section>
+
+    <!-- Form + contact details -->
+    <section class="section tone-paper">
+      <div class="container">
+        <div class="contact-grid">
+
+          <form class="contact-form" onsubmit="event.preventDefault(); this.classList.add('is-sent');">
+            <div class="row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" type="text" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="company">Company ⁄ Organization</label>
+                <input id="company" type="text" required />
+              </div>
+              <div class="field">
+                <label for="country">Country you are based in</label>
+                <input id="country" type="text" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="brief">What are you working on?</label>
+              <textarea id="brief" required placeholder="A few sentences are enough."></textarea>
+            </div>
+
+            <div class="field" style="max-width:420px;">
+              <label for="interest">What are you most interested in?</label>
+              <select id="interest">
+                <option value="" disabled selected>Select one</option>
+                <option>The Business Diagnostic</option>
+                <option>Expert partner enquiry</option>
+                <option>Technology build enquiry</option>
+                <option>Partnership or chamber referral</option>
+                <option>Press or media</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-foot">
+              <button type="submit" class="btn btn--primary">
+                Send Message
+                <span class="arrow" aria-hidden="true">→</span>
+              </button>
+              <p class="form-foot__note">We respond within two business days.</p>
+              <p class="form-foot__success">Thank you. Your message is on its way to our team.</p>
+            </div>
+          </form>
+
+          <aside class="contact-side">
+            <div class="contact-block">
+              <span class="eyebrow">Office</span>
+              <p class="contact-line">Nairobi, Kenya<br/><span class="muted">By appointment only</span></p>
+            </div>
+
+            <div class="contact-block">
+              <span class="eyebrow">General</span>
+              <a class="contact-line link-line" href="mailto:hello@aximohub.com">hello@aximohub.com</a>
+            </div>
+
+            <div class="contact-block">
+              <span class="eyebrow">Partnerships</span>
+              <a class="contact-line link-line" href="mailto:partners@aximohub.com">partners@aximohub.com</a>
+            </div>
+
+            <div class="contact-block">
+              <span class="eyebrow">Press and media</span>
+              <a class="contact-line link-line" href="mailto:press@aximohub.com">press@aximohub.com</a>
+            </div>
+
+            <div class="contact-block contact-note">
+              <span class="eyebrow">A note on fit</span>
+              <p class="muted" style="font-size:14px; line-height:1.6; margin:14px 0 0;">
+                We take on a limited number of engagements each quarter. If your project is not the right fit for Aximo, we say so honestly. Where useful, we point you toward someone who is.
+              </p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-footer></div>
+  <script src="partials.js"></script>
+
+  <style>
+    .page-hero {
+      padding-top: clamp(56px, 8vw, 96px);
+      padding-bottom: clamp(72px, 9vw, 120px);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: clamp(48px, 8vw, 120px);
+      align-items: start;
+    }
+    @media (max-width: 880px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+    }
+
+    .contact-form { display: grid; gap: 36px; }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+    @media (max-width: 640px) {
+      .row { grid-template-columns: 1fr; }
+    }
+
+    .field select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23161310' stroke-width='1.2' fill='none'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 4px center;
+      padding-right: 28px;
+    }
+
+    .form-foot {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 12px;
+    }
+    .form-foot__note { margin: 0; font-size: 13px; color: var(--muted); }
+    .form-foot__success {
+      margin: 0;
+      font-size: 13px;
+      color: var(--accent);
+      display: none;
+    }
+    .contact-form.is-sent .form-foot__success { display: block; }
+    .contact-form.is-sent .form-foot__note,
+    .contact-form.is-sent button { display: none; }
+
+    .contact-side {
+      display: grid;
+      gap: 28px;
+      padding: 36px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
+    .contact-block { display: grid; gap: 8px; }
+    .contact-block .eyebrow { display: inline-flex; align-items: center; }
+    .contact-line {
+      font-family: var(--serif);
+      font-size: 19px;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    .contact-line .muted {
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+    .link-line { transition: color var(--t-fast); }
+    .link-line:hover { color: var(--accent); }
+    .contact-note {
+      margin-top: 8px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+  </style>
+</body>
+</html>
